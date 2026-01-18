@@ -1,0 +1,84 @@
+\doxysection{src/triangulation.cpp File Reference}
+\hypertarget{triangulation_8cpp}{}\label{triangulation_8cpp}\index{src/triangulation.cpp@{src/triangulation.cpp}}
+
+
+Implementation of Delaunay triangulation using delaunator-\/cpp.  
+
+
+{\ttfamily \#include "{}triangulation.\+hpp"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$delaunator.\+hpp$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for triangulation.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{triangulation_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{triangulation_8cpp_a6a444966a8784260c456c3eca7b6e42a}{dist\+Sq}} (const \mbox{\hyperlink{structPoint}{Point}} \&a, const \mbox{\hyperlink{structPoint}{Point}} \&b)
+\begin{DoxyCompactList}\small\item\em Calculates the squared Euclidean distance between two points. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structMesh}{Mesh}} \mbox{\hyperlink{triangulation_8cpp_acca817c5787068ffa3ce591acbab1b45}{triangulate}} (const std\+::vector$<$ \mbox{\hyperlink{structPoint}{Point}} $>$ \&points)
+\begin{DoxyCompactList}\small\item\em Performs Delaunay triangulation on a set of 2D points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of Delaunay triangulation using delaunator-\/cpp. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{triangulation_8cpp_a6a444966a8784260c456c3eca7b6e42a}\label{triangulation_8cpp_a6a444966a8784260c456c3eca7b6e42a} 
+\index{triangulation.cpp@{triangulation.cpp}!distSq@{distSq}}
+\index{distSq@{distSq}!triangulation.cpp@{triangulation.cpp}}
+\doxysubsubsection{\texorpdfstring{distSq()}{distSq()}}
+{\footnotesize\ttfamily double dist\+Sq (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structPoint}{Point}} \&}]{a,  }\item[{const \mbox{\hyperlink{structPoint}{Point}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Calculates the squared Euclidean distance between two points. 
+
+Used to avoid square root calculations when comparing distances.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First point. \\
+\hline
+{\em b} & Second point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double Squared distance between a and b. 
+\end{DoxyReturn}
+\Hypertarget{triangulation_8cpp_acca817c5787068ffa3ce591acbab1b45}\label{triangulation_8cpp_acca817c5787068ffa3ce591acbab1b45} 
+\index{triangulation.cpp@{triangulation.cpp}!triangulate@{triangulate}}
+\index{triangulate@{triangulate}!triangulation.cpp@{triangulation.cpp}}
+\doxysubsubsection{\texorpdfstring{triangulate()}{triangulate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMesh}{Mesh}} triangulate (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structPoint}{Point}} $>$ \&}]{points }\end{DoxyParamCaption})}
+
+
+
+Performs Delaunay triangulation on a set of 2D points. 
+
+Uses the delaunator-\/cpp library to generate a triangulation from the projected X and Y coordinates of the input points. The Z coordinate is preserved in the resulting mesh.
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & The vector of input points to triangulate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structMesh}{Mesh} The resulting triangular mesh containing points and triangles. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{triangulation_8cpp_acca817c5787068ffa3ce591acbab1b45_cgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,119 @@
+\doxysection{Quad\+Tree Class Reference}
+\hypertarget{classQuadTree}{}\label{classQuadTree}\index{QuadTree@{QuadTree}}
+
+
+A recursive \doxylink{classQuadTree}{Quad\+Tree} structure for spatial indexing of triangles.  
+
+
+
+
+{\ttfamily \#include $<$quadtree.\+hpp$>$}
+
+
+
+Collaboration diagram for Quad\+Tree\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{classQuadTree__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQuadTree_a4f50af57e62eeee792d7767216e3c4d6}{Quad\+Tree}} (const \mbox{\hyperlink{structBoundingBox}{Bounding\+Box}} \&bounds, int depth=0)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classQuadTree}{Quad\+Tree} node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQuadTree_aeb7d76e906073e3ed01624178fca0eb7}{insert}} (const \mbox{\hyperlink{structTriangle}{Triangle}} \&triangle, const std\+::vector$<$ \mbox{\hyperlink{structPoint}{Point}} $>$ \&points)
+\begin{DoxyCompactList}\small\item\em Inserts a triangle into the \doxylink{classQuadTree}{Quad\+Tree}. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{structTriangle}{Triangle}} $>$ \mbox{\hyperlink{classQuadTree_aae9b62de9c9b13df50cc8565214d828f}{find}} (double x, double y, const std\+::vector$<$ \mbox{\hyperlink{structPoint}{Point}} $>$ \&points) const
+\begin{DoxyCompactList}\small\item\em Finds the triangle containing a specific point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A recursive \doxylink{classQuadTree}{Quad\+Tree} structure for spatial indexing of triangles. 
+
+Used to efficiently query which triangle covers a given (x, y) point on the map. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classQuadTree_a4f50af57e62eeee792d7767216e3c4d6}\label{classQuadTree_a4f50af57e62eeee792d7767216e3c4d6} 
+\index{QuadTree@{QuadTree}!QuadTree@{QuadTree}}
+\index{QuadTree@{QuadTree}!QuadTree@{QuadTree}}
+\doxysubsubsection{\texorpdfstring{QuadTree()}{QuadTree()}}
+{\footnotesize\ttfamily Quad\+Tree\+::\+Quad\+Tree (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structBoundingBox}{Bounding\+Box}} \&}]{bounds,  }\item[{int}]{depth = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classQuadTree}{Quad\+Tree} node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bounds} & The spatial bounds of this node. \\
+\hline
+{\em depth} & The current depth in the tree (default is 0). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classQuadTree_aae9b62de9c9b13df50cc8565214d828f}\label{classQuadTree_aae9b62de9c9b13df50cc8565214d828f} 
+\index{QuadTree@{QuadTree}!find@{find}}
+\index{find@{find}!QuadTree@{QuadTree}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{structTriangle}{Triangle}} $>$ Quad\+Tree\+::find (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structPoint}{Point}} $>$ \&}]{points }\end{DoxyParamCaption}) const}
+
+
+
+Finds the triangle containing a specific point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate. \\
+\hline
+{\em y} & Y coordinate. \\
+\hline
+{\em points} & The complete list of points. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::optional$<$\+Triangle$>$ The triangle containing the point, or std\+::nullopt. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classQuadTree_aae9b62de9c9b13df50cc8565214d828f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classQuadTree_aeb7d76e906073e3ed01624178fca0eb7}\label{classQuadTree_aeb7d76e906073e3ed01624178fca0eb7} 
+\index{QuadTree@{QuadTree}!insert@{insert}}
+\index{insert@{insert}!QuadTree@{QuadTree}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void Quad\+Tree\+::insert (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTriangle}{Triangle}} \&}]{triangle,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structPoint}{Point}} $>$ \&}]{points }\end{DoxyParamCaption})}
+
+
+
+Inserts a triangle into the \doxylink{classQuadTree}{Quad\+Tree}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em triangle} & The triangle to insert. \\
+\hline
+{\em points} & The complete list of points (needed to get vertex coordinates). \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{classQuadTree_aeb7d76e906073e3ed01624178fca0eb7_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/quadtree.\+hpp\item 
+src/\mbox{\hyperlink{quadtree_8cpp}{quadtree.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,7 @@
+<map id="QuadTree::find" name="QuadTree::find">
+<area shape="rect" id="Node000001" title="Finds the triangle containing a specific point." alt="" coords="5,31,120,56"/>
+<area shape="rect" id="Node000002" href="$structBoundingBox.html#afa7484d1a40fd83c4f9a18d25dfa7f6f" title="Checks if a point is within the bounding box." alt="" coords="168,5,339,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,33,154,28,155,34,121,38"/>
+<area shape="rect" id="Node000003" href="$quadtree_8cpp.html#a63fb56cc1535fae60b633cf0021e2442" title="Checks if a 2D point lies inside a 2D triangle using barycentric coordinates." alt="" coords="189,55,318,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="121,48,175,55,174,60,120,53"/>
+</map>

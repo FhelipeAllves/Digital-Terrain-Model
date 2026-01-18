@@ -1,0 +1,27 @@
+var indexSectionsWithContent =
+{
+  0: "bcdfgilmpqrtxyz",
+  1: "bcmpqt",
+  2: "mqrt",
+  3: "cdfgilqt",
+  4: "ptxyz"
+};
+
+var indexSectionNames =
+{
+  0: "all",
+  1: "classes",
+  2: "files",
+  3: "functions",
+  4: "variables"
+};
+
+var indexSectionLabels =
+{
+  0: "All",
+  1: "Classes",
+  2: "Files",
+  3: "Functions",
+  4: "Variables"
+};
+

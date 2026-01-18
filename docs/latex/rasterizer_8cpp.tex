@@ -1,0 +1,147 @@
+\doxysection{src/rasterizer.cpp File Reference}
+\hypertarget{rasterizer_8cpp}{}\label{rasterizer_8cpp}\index{src/rasterizer.cpp@{src/rasterizer.cpp}}
+
+
+Implementation of the rasterization process (coloring, shading, and image generation).  
+
+
+{\ttfamily \#include "{}rasterizer.\+hpp"{}}\newline
+{\ttfamily \#include "{}quadtree.\+hpp"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+Include dependency graph for rasterizer.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rasterizer_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structColor}{Color}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structColor}{Color}} \mbox{\hyperlink{rasterizer_8cpp_ac88e78a87a7396f863cfa09e51fb788f}{get\+Color}} (double z, double minZ, double maxZ)
+\begin{DoxyCompactList}\small\item\em Maps an altitude to a color using a Haxby-\/like colormap. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{rasterizer_8cpp_ac38397a2312f33c5181d7b2353eb8edd}{interpolateZ}} (double px, double py, const \mbox{\hyperlink{structPoint}{Point}} \&p1, const \mbox{\hyperlink{structPoint}{Point}} \&p2, const \mbox{\hyperlink{structPoint}{Point}} \&p3)
+\begin{DoxyCompactList}\small\item\em Computes the Z coordinate at point (px, py) within a triangle using barycentric interpolation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{rasterizer_8cpp_a1bafb69033d68d0d0911072d4db1e261}{calculate\+Shade}} (const \mbox{\hyperlink{structPoint}{Point}} \&p1, const \mbox{\hyperlink{structPoint}{Point}} \&p2, const \mbox{\hyperlink{structPoint}{Point}} \&p3)
+\begin{DoxyCompactList}\small\item\em Calculates a shading factor based on the triangle\textquotesingle{}s normal and a fixed light source. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{rasterizer_8cpp_ad4238571bbe1f1d8b4f5b03a798804b1}{generate\+Image}} (const std\+::string \&filename, int width, const \mbox{\hyperlink{structMesh}{Mesh}} \&mesh)
+\begin{DoxyCompactList}\small\item\em Generates a colorized raster image (PPM) from the triangulated mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the rasterization process (coloring, shading, and image generation). 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{rasterizer_8cpp_a1bafb69033d68d0d0911072d4db1e261}\label{rasterizer_8cpp_a1bafb69033d68d0d0911072d4db1e261} 
+\index{rasterizer.cpp@{rasterizer.cpp}!calculateShade@{calculateShade}}
+\index{calculateShade@{calculateShade}!rasterizer.cpp@{rasterizer.cpp}}
+\doxysubsubsection{\texorpdfstring{calculateShade()}{calculateShade()}}
+{\footnotesize\ttfamily double calculate\+Shade (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structPoint}{Point}} \&}]{p1,  }\item[{const \mbox{\hyperlink{structPoint}{Point}} \&}]{p2,  }\item[{const \mbox{\hyperlink{structPoint}{Point}} \&}]{p3 }\end{DoxyParamCaption})}
+
+
+
+Calculates a shading factor based on the triangle\textquotesingle{}s normal and a fixed light source. 
+
+Computes the normal vector of the triangle (cross product of edges) and takes the dot product with a fixed light direction (from NW).
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & First vertex. \\
+\hline
+{\em p2} & Second vertex. \\
+\hline
+{\em p3} & Third vertex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double Shading factor (0.\+4 to 1.\+0). 
+\end{DoxyReturn}
+\Hypertarget{rasterizer_8cpp_ad4238571bbe1f1d8b4f5b03a798804b1}\label{rasterizer_8cpp_ad4238571bbe1f1d8b4f5b03a798804b1} 
+\index{rasterizer.cpp@{rasterizer.cpp}!generateImage@{generateImage}}
+\index{generateImage@{generateImage}!rasterizer.cpp@{rasterizer.cpp}}
+\doxysubsubsection{\texorpdfstring{generateImage()}{generateImage()}}
+{\footnotesize\ttfamily void generate\+Image (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{int}]{width,  }\item[{const \mbox{\hyperlink{structMesh}{Mesh}} \&}]{mesh }\end{DoxyParamCaption})}
+
+
+
+Generates a colorized raster image (PPM) from the triangulated mesh. 
+
+Rasterizes the mesh into a PPM image of the specified width. The height is calculated automatically to maintain aspect ratio. Altitude is visualized using a color map.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The output filename (e.\+g., "{}output.\+ppm"{}). \\
+\hline
+{\em width} & The desired width of the output image in pixels. \\
+\hline
+{\em mesh} & The triangulated mesh to rasterize. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rasterizer_8cpp_ad4238571bbe1f1d8b4f5b03a798804b1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rasterizer_8cpp_ac88e78a87a7396f863cfa09e51fb788f}\label{rasterizer_8cpp_ac88e78a87a7396f863cfa09e51fb788f} 
+\index{rasterizer.cpp@{rasterizer.cpp}!getColor@{getColor}}
+\index{getColor@{getColor}!rasterizer.cpp@{rasterizer.cpp}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structColor}{Color}} get\+Color (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{double}]{minZ,  }\item[{double}]{maxZ }\end{DoxyParamCaption})}
+
+
+
+Maps an altitude to a color using a Haxby-\/like colormap. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & Current altitude. \\
+\hline
+{\em minZ} & Minimum altitude in the dataset. \\
+\hline
+{\em maxZ} & Maximum altitude in the dataset. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structColor}{Color} The corresponding RGB color. 
+\end{DoxyReturn}
+\Hypertarget{rasterizer_8cpp_ac38397a2312f33c5181d7b2353eb8edd}\label{rasterizer_8cpp_ac38397a2312f33c5181d7b2353eb8edd} 
+\index{rasterizer.cpp@{rasterizer.cpp}!interpolateZ@{interpolateZ}}
+\index{interpolateZ@{interpolateZ}!rasterizer.cpp@{rasterizer.cpp}}
+\doxysubsubsection{\texorpdfstring{interpolateZ()}{interpolateZ()}}
+{\footnotesize\ttfamily double interpolateZ (\begin{DoxyParamCaption}\item[{double}]{px,  }\item[{double}]{py,  }\item[{const \mbox{\hyperlink{structPoint}{Point}} \&}]{p1,  }\item[{const \mbox{\hyperlink{structPoint}{Point}} \&}]{p2,  }\item[{const \mbox{\hyperlink{structPoint}{Point}} \&}]{p3 }\end{DoxyParamCaption})}
+
+
+
+Computes the Z coordinate at point (px, py) within a triangle using barycentric interpolation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em px} & X coordinate of the target point. \\
+\hline
+{\em py} & Y coordinate of the target point. \\
+\hline
+{\em p1} & First vertex of the triangle. \\
+\hline
+{\em p2} & Second vertex of the triangle. \\
+\hline
+{\em p3} & Third vertex of the triangle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double The interpolated altitude (Z). 
+\end{DoxyReturn}

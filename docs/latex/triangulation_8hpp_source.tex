@@ -1,0 +1,26 @@
+\doxysection{triangulation.\+hpp}
+\hypertarget{triangulation_8hpp_source}{}\label{triangulation_8hpp_source}\index{include/triangulation.hpp@{include/triangulation.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TRIANGULATION\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TRIANGULATION\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}MNT.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structTriangle}{Triangle}}\ \{}
+\DoxyCodeLine{00013\ \ \ std::size\_t\ p1,\ p2,\ \mbox{\hyperlink{structTriangle_a5fe0f9efd4d862c3944bc43078e60ffd}{p3}};\ }
+\DoxyCodeLine{00014\ \};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structMesh}{Mesh}}\ \{}
+\DoxyCodeLine{00021\ \ \ std::vector<Point>\ \mbox{\hyperlink{structMesh_a036cde6987388c791c837f8ac78384e5}{points}};\ }
+\DoxyCodeLine{00022\ \ \ std::vector<Triangle>}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \mbox{\hyperlink{structMesh_acd19d61e90f1e48905bf53b36ee229f2}{triangles}};\ }
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00036\ \mbox{\hyperlink{structMesh}{Mesh}}\ triangulate(\textcolor{keyword}{const}\ std::vector<Point>\ \&points);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TRIANGULATION\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,14 @@
+# Ignorer le dossier de compilation (fichiers temporaires CMake)
+build/
+bin/
+lib/
+
+# Ignorer les fichiers de configuration de l'éditeur (VS Code, etc.)
+.vscode/
+.idea/
+
+# Ignorer les fichiers système (Mac/Linux/Windows)
+.DS_Store
+Thumbs.db
+
+/mason_packages/

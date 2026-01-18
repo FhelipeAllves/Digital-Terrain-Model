@@ -1,0 +1,45 @@
+\doxysection{quadtree.\+hpp}
+\hypertarget{quadtree_8hpp_source}{}\label{quadtree_8hpp_source}\index{include/quadtree.hpp@{include/quadtree.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ QUADTREE\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ QUADTREE\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}triangulation.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structBoundingBox}{BoundingBox}}\ \{}
+\DoxyCodeLine{00014\ \ \ \textcolor{keywordtype}{double}\ minX,\ minY,\ maxX,\ maxY;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structBoundingBox_afa7484d1a40fd83c4f9a18d25dfa7f6f}{contains}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structBoundingBox_acb7e11c86e571905b4eafd6d81a3ac11}{intersects}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structBoundingBox}{BoundingBox}}\ \&other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classQuadTree}{QuadTree}}\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{classQuadTree}{QuadTree}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structBoundingBox}{BoundingBox}}\ \&bounds,\ \textcolor{keywordtype}{int}\ depth\ =\ 0);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classQuadTree_aeb7d76e906073e3ed01624178fca0eb7}{insert}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTriangle}{Triangle}}\ \&triangle,\ \textcolor{keyword}{const}\ std::vector<Point>\ \&points);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00064\ \ \ std::optional<Triangle>\ \mbox{\hyperlink{classQuadTree_aae9b62de9c9b13df50cc8565214d828f}{find}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Point>\ \&points)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{structBoundingBox}{BoundingBox}}\ bounds;}
+\DoxyCodeLine{00069\ \ \ \textcolor{keywordtype}{int}\ depth;}
+\DoxyCodeLine{00070\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ MAX\_DEPTH\ =\ 10;}
+\DoxyCodeLine{00071\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ MAX\_TRIANGLES\ =\ 1500;\ \textcolor{comment}{//\ Leaf\ capacity}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ std::vector<Triangle>\ triangles;}
+\DoxyCodeLine{00074\ \ \ std::unique\_ptr<QuadTree>\ children[4];\ \textcolor{comment}{//\ NW,\ NE,\ SW,\ SE}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \textcolor{keywordtype}{bool}\ isLeaf()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{void}\ subdivide();}
+\DoxyCodeLine{00078\ \};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ QUADTREE\_HPP}}
+
+\end{DoxyCode}

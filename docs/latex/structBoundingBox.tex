@@ -1,0 +1,93 @@
+\doxysection{Bounding\+Box Struct Reference}
+\hypertarget{structBoundingBox}{}\label{structBoundingBox}\index{BoundingBox@{BoundingBox}}
+
+
+Represents a 2D axis-\/aligned bounding box.  
+
+
+
+
+{\ttfamily \#include $<$quadtree.\+hpp$>$}
+
+
+
+Collaboration diagram for Bounding\+Box\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{structBoundingBox__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structBoundingBox_afa7484d1a40fd83c4f9a18d25dfa7f6f}{contains}} (double x, double y) const
+\begin{DoxyCompactList}\small\item\em Checks if a point is within the bounding box. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structBoundingBox_acb7e11c86e571905b4eafd6d81a3ac11}{intersects}} (const \mbox{\hyperlink{structBoundingBox}{Bounding\+Box}} \&other) const
+\begin{DoxyCompactList}\small\item\em Checks if this bounding box intersects with another. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structBoundingBox_a3fdd6ed97edb8a4b15659a384e5de62f}\label{structBoundingBox_a3fdd6ed97edb8a4b15659a384e5de62f} 
+double {\bfseries minX}
+\item 
+\Hypertarget{structBoundingBox_a75e0bf05e541664c30ceac962094f906}\label{structBoundingBox_a75e0bf05e541664c30ceac962094f906} 
+double {\bfseries minY}
+\item 
+\Hypertarget{structBoundingBox_a6810a999e32072921dc8347c1710a5ed}\label{structBoundingBox_a6810a999e32072921dc8347c1710a5ed} 
+double {\bfseries maxX}
+\item 
+\Hypertarget{structBoundingBox_ae86b88699c12d4756599bbe0b966acb8}\label{structBoundingBox_ae86b88699c12d4756599bbe0b966acb8} 
+double {\bfseries maxY}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a 2D axis-\/aligned bounding box. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structBoundingBox_afa7484d1a40fd83c4f9a18d25dfa7f6f}\label{structBoundingBox_afa7484d1a40fd83c4f9a18d25dfa7f6f} 
+\index{BoundingBox@{BoundingBox}!contains@{contains}}
+\index{contains@{contains}!BoundingBox@{BoundingBox}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool Bounding\+Box\+::contains (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption}) const}
+
+
+
+Checks if a point is within the bounding box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the point. \\
+\hline
+{\em y} & Y coordinate of the point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the point is inside, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{structBoundingBox_acb7e11c86e571905b4eafd6d81a3ac11}\label{structBoundingBox_acb7e11c86e571905b4eafd6d81a3ac11} 
+\index{BoundingBox@{BoundingBox}!intersects@{intersects}}
+\index{intersects@{intersects}!BoundingBox@{BoundingBox}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}}
+{\footnotesize\ttfamily bool Bounding\+Box\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structBoundingBox}{Bounding\+Box}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Checks if this bounding box intersects with another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other bounding box. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if they intersect, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/quadtree.\+hpp\item 
+src/\mbox{\hyperlink{quadtree_8cpp}{quadtree.\+cpp}}\end{DoxyCompactItemize}

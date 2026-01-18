@@ -1,0 +1,79 @@
+\doxysection{src/quadtree.cpp File Reference}
+\hypertarget{quadtree_8cpp}{}\label{quadtree_8cpp}\index{src/quadtree.cpp@{src/quadtree.cpp}}
+
+
+Implementation of the \doxylink{classQuadTree}{Quad\+Tree} for spatial indexing.  
+
+
+{\ttfamily \#include "{}quadtree.\+hpp"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for quadtree.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{quadtree_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structBoundingBox}{Bounding\+Box}} \mbox{\hyperlink{quadtree_8cpp_ac0920e6cabffd9e9d8c844aeb1662e87}{get\+Triangle\+Bounds}} (const \mbox{\hyperlink{structTriangle}{Triangle}} \&t, const std\+::vector$<$ \mbox{\hyperlink{structPoint}{Point}} $>$ \&points)
+\begin{DoxyCompactList}\small\item\em Computes the bounding box of a single triangle. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{quadtree_8cpp_a63fb56cc1535fae60b633cf0021e2442}{is\+Point\+In\+Triangle}} (double px, double py, const \mbox{\hyperlink{structPoint}{Point}} \&p1, const \mbox{\hyperlink{structPoint}{Point}} \&p2, const \mbox{\hyperlink{structPoint}{Point}} \&p3)
+\begin{DoxyCompactList}\small\item\em Checks if a 2D point lies inside a 2D triangle using barycentric coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{classQuadTree}{Quad\+Tree} for spatial indexing. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{quadtree_8cpp_ac0920e6cabffd9e9d8c844aeb1662e87}\label{quadtree_8cpp_ac0920e6cabffd9e9d8c844aeb1662e87} 
+\index{quadtree.cpp@{quadtree.cpp}!getTriangleBounds@{getTriangleBounds}}
+\index{getTriangleBounds@{getTriangleBounds}!quadtree.cpp@{quadtree.cpp}}
+\doxysubsubsection{\texorpdfstring{getTriangleBounds()}{getTriangleBounds()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structBoundingBox}{Bounding\+Box}} get\+Triangle\+Bounds (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTriangle}{Triangle}} \&}]{t,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structPoint}{Point}} $>$ \&}]{points }\end{DoxyParamCaption})}
+
+
+
+Computes the bounding box of a single triangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The triangle. \\
+\hline
+{\em points} & The list of vertex points. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structBoundingBox}{Bounding\+Box} The minimal bounding box containing the triangle. 
+\end{DoxyReturn}
+\Hypertarget{quadtree_8cpp_a63fb56cc1535fae60b633cf0021e2442}\label{quadtree_8cpp_a63fb56cc1535fae60b633cf0021e2442} 
+\index{quadtree.cpp@{quadtree.cpp}!isPointInTriangle@{isPointInTriangle}}
+\index{isPointInTriangle@{isPointInTriangle}!quadtree.cpp@{quadtree.cpp}}
+\doxysubsubsection{\texorpdfstring{isPointInTriangle()}{isPointInTriangle()}}
+{\footnotesize\ttfamily bool is\+Point\+In\+Triangle (\begin{DoxyParamCaption}\item[{double}]{px,  }\item[{double}]{py,  }\item[{const \mbox{\hyperlink{structPoint}{Point}} \&}]{p1,  }\item[{const \mbox{\hyperlink{structPoint}{Point}} \&}]{p2,  }\item[{const \mbox{\hyperlink{structPoint}{Point}} \&}]{p3 }\end{DoxyParamCaption})}
+
+
+
+Checks if a 2D point lies inside a 2D triangle using barycentric coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em px} & X coordinate of the point. \\
+\hline
+{\em py} & Y coordinate of the point. \\
+\hline
+{\em p1} & First vertex of the triangle. \\
+\hline
+{\em p2} & Second vertex of the triangle. \\
+\hline
+{\em p3} & Third vertex of the triangle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the point is inside or on the edge, false otherwise. 
+\end{DoxyReturn}

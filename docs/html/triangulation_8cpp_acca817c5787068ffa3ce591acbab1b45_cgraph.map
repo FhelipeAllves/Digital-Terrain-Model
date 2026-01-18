@@ -1,0 +1,5 @@
+<map id="triangulate" name="triangulate">
+<area shape="rect" id="Node000001" title="Performs Delaunay triangulation on a set of 2D points." alt="" coords="5,5,99,31"/>
+<area shape="rect" id="Node000002" href="$triangulation_8cpp.html#a6a444966a8784260c456c3eca7b6e42a" title="Calculates the squared Euclidean distance between two points." alt="" coords="147,5,209,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,15,133,15,133,21,99,21"/>
+</map>

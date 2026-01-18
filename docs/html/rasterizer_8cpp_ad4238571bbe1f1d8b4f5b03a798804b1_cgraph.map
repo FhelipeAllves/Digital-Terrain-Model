@@ -1,0 +1,21 @@
+<map id="generateImage" name="generateImage">
+<area shape="rect" id="Node000001" title="Generates a colorized raster image (PPM) from the triangulated mesh." alt="" coords="5,104,127,129"/>
+<area shape="rect" id="Node000002" href="$rasterizer_8cpp.html#a1bafb69033d68d0d0911072d4db1e261" title="Calculates a shading factor based on the triangle&#39;s normal and a fixed light source." alt="" coords="178,5,299,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,102,122,71,173,40,186,34,188,38,176,44,125,76,85,106"/>
+<area shape="rect" id="Node000003" href="$classQuadTree.html#aae9b62de9c9b13df50cc8565214d828f" title="Finds the triangle containing a specific point." alt="" coords="181,55,296,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="110,101,179,81,181,86,112,107"/>
+<area shape="rect" id="Node000006" href="$rasterizer_8cpp.html#ac88e78a87a7396f863cfa09e51fb788f" title="Maps an altitude to a color using a Haxby&#45;like colormap." alt="" coords="200,104,277,129"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="127,114,186,114,186,119,127,119"/>
+<area shape="rect" id="Node000007" href="$classQuadTree.html#aeb7d76e906073e3ed01624178fca0eb7" title="Inserts a triangle into the QuadTree." alt="" coords="175,153,303,179"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="112,127,181,147,179,152,110,132"/>
+<area shape="rect" id="Node000010" href="$rasterizer_8cpp.html#ac38397a2312f33c5181d7b2353eb8edd" title="Computes the Z coordinate at point (px, py) within a triangle using barycentric interpolation." alt="" coords="187,203,290,228"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="85,127,126,157,176,188,190,195,188,200,173,192,123,161,82,132"/>
+<area shape="rect" id="Node000004" href="$structBoundingBox.html#afa7484d1a40fd83c4f9a18d25dfa7f6f" title="Checks if a point is within the bounding box." alt="" coords="355,31,526,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="296,58,341,52,342,58,296,63"/>
+<area shape="rect" id="Node000005" href="$quadtree_8cpp.html#a63fb56cc1535fae60b633cf0021e2442" title="Checks if a 2D point lies inside a 2D triangle using barycentric coordinates." alt="" coords="376,80,505,105"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="296,72,363,80,362,86,296,77"/>
+<area shape="rect" id="Node000008" href="$quadtree_8cpp.html#ac0920e6cabffd9e9d8c844aeb1662e87" title="Computes the bounding box of a single triangle." alt="" coords="369,153,512,179"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="303,163,355,163,355,169,303,169"/>
+<area shape="rect" id="Node000009" href="$structBoundingBox.html#acb7e11c86e571905b4eafd6d81a3ac11" title="Checks if this bounding box intersects with another." alt="" coords="351,203,531,228"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="292,176,375,197,374,202,291,181"/>
+</map>

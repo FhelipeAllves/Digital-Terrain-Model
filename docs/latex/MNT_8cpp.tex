@@ -1,0 +1,52 @@
+\doxysection{src/\+MNT.cpp File Reference}
+\hypertarget{MNT_8cpp}{}\label{MNT_8cpp}\index{src/MNT.cpp@{src/MNT.cpp}}
+
+
+Implementation of data loading and coordinate conversion.  
+
+
+{\ttfamily \#include "{}MNT.\+hpp"{}}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$proj.\+h$>$}\newline
+Include dependency graph for MNT.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MNT_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structPoint}{Point}} $>$ \mbox{\hyperlink{MNT_8cpp_af436fae92dccd7d8ea159e275a58ce5f}{lire\+Et\+Convertir}} (const std\+::string \&nom\+Fichier)
+\begin{DoxyCompactList}\small\item\em Reads terrain data from a file and converts coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of data loading and coordinate conversion. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{MNT_8cpp_af436fae92dccd7d8ea159e275a58ce5f}\label{MNT_8cpp_af436fae92dccd7d8ea159e275a58ce5f} 
+\index{MNT.cpp@{MNT.cpp}!lireEtConvertir@{lireEtConvertir}}
+\index{lireEtConvertir@{lireEtConvertir}!MNT.cpp@{MNT.cpp}}
+\doxysubsubsection{\texorpdfstring{lireEtConvertir()}{lireEtConvertir()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structPoint}{Point}} $>$ lire\+Et\+Convertir (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{nom\+Fichier }\end{DoxyParamCaption})}
+
+
+
+Reads terrain data from a file and converts coordinates. 
+
+This function reads a text file containing geographic coordinates (latitude, longitude, altitude) and converts them to a projected coordinate system (Lambert93) using the PROJ library.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom\+Fichier} & The path to the input data file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Point$>$ A vector of projected 3D points. 
+\end{DoxyReturn}
