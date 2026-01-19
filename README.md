@@ -1,5 +1,22 @@
 # Terrain Rasterizer
 
+![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![CMake](https://img.shields.io/badge/CMake-%23008FBA.svg?style=for-the-badge&logo=cmake&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
+
+## Data Transformation
+
+This project converts a raw GPS point cloud into a readable topographic map. Detailed view of Lake Guerlédan (Brittany) with Haxby coloring and dynamic shading:
+
+| Input: Raw Data (.txt) | Processing | Output: Digital Model (.ppm) |
+| :---: | :---: | :---: |
+| `48.2976 -004.4173 14.33`<br>`48.2977 -004.4174 14.38`<br>`48.2978 -004.4175 14.45`<br>`...`<br>*(WGS84 Coordinates)* | <br>➡️<br>**Projection**<br>+<br>**Rasterization**<br> | <img src="images/lac.png" width="100%"> |
+
+## Technical Documentation
+
+The complete code documentation (class diagrams, architecture) is available here:
+**[View Doxygen Documentation Online](https://fhelipeallves.github.io/Digital-Terrain-Model/index.html)**
+
 ## Overview
 
 **Terrain Rasterizer** is a C++ application designed to transform raw geographic terrain data (latitude, longitude, altitude) into a visual 2D raster image. The project simulates a top-down view of the terrain, applying color mapping based on altitude and 3D shading to create a realistic Digital Elevation Model (DEM) visualization.

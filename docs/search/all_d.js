@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_0',['y',['../structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8',1,'Point']]]
+  ['structure_0',['Project Structure',['../index.html#autotoc_md3',1,'']]]
 ];
